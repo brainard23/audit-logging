@@ -1,0 +1,22 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/$1"
+  },
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+  "testMatch": ["**/__tests__/**/*.test.ts", "**/__tests__/**/*.test.tsx"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": ["ts-jest", {
+      "tsconfig": {
+        "jsx": "react",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+      }
+    }]
+  },
+  "testPathIgnorePatterns": [
+    "/node_modules/",
+    "/__tests__/server/"
+  ]
+}
